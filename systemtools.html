@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Tools | TheSailorsSea</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #0a0815;
+            --secondary-color: #1a103d;
+            --accent-color: #9d7cff;
+            --text-color: #e6e1ff;
+            --section-bg: rgba(26, 16, 61, 0.3);
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--secondary-color);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid rgba(157, 124, 255, 0.2);
+        }
+        
+        .back-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 1rem;
+        }
+        
+        .page-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .page-title i {
+            color: var(--accent-color);
+        }
+        
+        .letter-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 2rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .letter-btn {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.05);
+            color: #aaa;
+            border: 1px solid rgba(157, 124, 255, 0.1);
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .letter-btn:hover {
+            background: rgba(157, 124, 255, 0.1);
+            color: var(--accent-color);
+            border-color: rgba(157, 124, 255, 0.3);
+        }
+        
+        .letter-btn.active {
+            background: rgba(157, 124, 255, 0.2);
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        
+        .letter-btn.empty {
+            opacity: 0.3;
+            cursor: default;
+        }
+        
+        .letter-btn.empty:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #aaa;
+            border-color: rgba(157, 124, 255, 0.1);
+        }
+        
+        .programs-container {
+            position: relative;
+        }
+        
+        .program-item {
+            background: rgba(26, 16, 61, 0.5);
+            border: 1px solid rgba(157, 124, 255, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            opacity: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .program-item.hidden {
+            display: none;
+        }
+        
+        .program-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 1rem;
+        }
+        
+        .program-header img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+        
+        .program-name {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #e6e1ff;
+        }
+        
+        .program-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .info-item {
+            background: rgba(157, 124, 255, 0.05);
+            padding: 0.8rem;
+            border-radius: 4px;
+        }
+        
+        .info-label {
+            color: #b39dff;
+            font-size: 0.85rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .info-value {
+            color: #fff;
+            font-weight: 500;
+        }
+        
+        .download-section {
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid rgba(157, 124, 255, 0.1);
+        }
+        
+        .download-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .download-btn {
+            padding: 0.5rem 1rem;
+            background: rgba(157, 124, 255, 0.1);
+            color: var(--accent-color);
+            border: 1px solid rgba(157, 124, 255, 0.3);
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .download-btn:hover {
+            background: rgba(157, 124, 255, 0.2);
+            border-color: var(--accent-color);
+        }
+        
+        .placeholder {
+            text-align: center;
+            color: #9d7cff;
+            margin-top: 3rem;
+        }
+        
+        .placeholder i {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html#tools" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to Tools
+            </a>
+            <h1 class="page-title">
+                <i class="fas fa-cogs"></i> System Tools
+            </h1>
+        </div>
+    </header>
+    
+    <main class="container" style="padding: 2rem 0;">
+        <div id="letterNav" class="letter-nav"></div>
+        
+        <div class="programs-container">
+            <!-- Tools will be loaded dynamically from systemtools.json -->
+        </div>
+    </main>
+
+<script src="systemtools.js"></script>    
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const programsContainer = document.querySelector('.programs-container');
+        const letterNav = document.getElementById('letterNav');
+        
+        if (typeof toolsData === 'undefined') {
+            programsContainer.innerHTML = `
+                <div class="placeholder">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>Error: systemtools.js not loaded</p>
+                </div>
+            `;
+            return;
+        }
+        
+        const programs = toolsData.system_tools;
+        programsContainer.innerHTML = '';
+        
+        programs.sort((a, b) => {
+            const nameA = a.name.toLowerCase();
+            const nameB = b.name.toLowerCase();
+            return nameA.localeCompare(nameB);
+        });
+        
+        programs.forEach(tool => {
+            const programItem = document.createElement('div');
+            programItem.className = 'program-item';
+            programItem.setAttribute('data-letter', tool.name.charAt(0).toUpperCase());
+            
+            let iconHTML = '';
+            if (tool.icon && tool.icon.startsWith('http')) {
+                iconHTML = `<img src="${tool.icon}" alt="${tool.name} Logo" style="width: 40px; height: 40px; border-radius: 4px;">`;
+            } else if (tool.icon && (tool.icon.startsWith('fas ') || tool.icon.startsWith('fab '))) {
+                iconHTML = `<div style="width: 40px; height: 40px; background: rgba(157, 124, 255, 0.2); border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                    <i class="${tool.icon}" style="color: #9d7cff; font-size: 1.2rem;"></i>
+                </div>`;
+            } else {
+                iconHTML = `<div style="width: 40px; height: 40px; background: rgba(157, 124, 255, 0.2); border-radius: 4px; display: flex; align-items: center; justify-content: center;">
+                    <i class="fas fa-cog" style="color: #9d7cff; font-size: 1.2rem;"></i>
+                </div>`;
+            }
+            
+            programItem.innerHTML = `
+                <div class="program-header">
+                    ${iconHTML}
+                    <div>
+                        <h2 class="program-name">${tool.name}</h2>
+                        <p style="color: #b39dff;">${tool.description}</p>
+                    </div>
+                </div>
+                
+                <div class="program-info">
+                    <div class="info-item">
+                        <div class="info-label">Version</div>
+                        <div class="info-value">${tool.version}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Size</div>
+                        <div class="info-value">${tool.size}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Platform</div>
+                        <div class="info-value">${tool.platform}</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Status</div>
+                        <div class="info-value" style="color: ${tool.status_color || '#b39dff'};">${tool.status}</div>
+                    </div>
+                </div>
+                
+                <p style="color: #c5b5ff;">${tool.details}</p>
+                
+                <div class="download-section">
+                    <h3 style="margin-bottom: 1rem;">Download Links</h3>
+                    <div class="download-links">
+                        <a href="${tool.download_url}" class="download-btn" target="_blank">${tool.download_text || 'Download'}</a>
+                    </div>
+                </div>
+            `;
+            
+            programsContainer.appendChild(programItem);
+        });
+        
+        setupLetterNavigation(programs);
+        
+        function setupLetterNavigation(programs) {
+            const programItems = Array.from(document.querySelectorAll('.program-item'));
+            
+            let placeholder = document.createElement('div');
+            placeholder.className = 'placeholder';
+            placeholder.innerHTML = `
+                <i class="fas fa-plus-circle"></i>
+                <p>More system tools will be added soon</p>
+            `;
+            programsContainer.appendChild(placeholder);
+            
+            placeholder.style.display = 'none';
+            
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+            const availableLetters = new Set();
+            
+            programItems.forEach(program => {
+                const letter = program.getAttribute('data-letter');
+                if (letter) {
+                    availableLetters.add(letter);
+                }
+            });
+            
+            letterNav.innerHTML = '';
+            
+            const allButton = document.createElement('a');
+            allButton.className = 'letter-btn active';
+            allButton.textContent = 'All';
+            allButton.href = '#';
+            
+            allButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                filterByLetter('All');
+            });
+            
+            letterNav.appendChild(allButton);
+            
+            letters.forEach(letter => {
+                const button = document.createElement('a');
+                button.className = 'letter-btn';
+                if (!availableLetters.has(letter)) {
+                    button.classList.add('empty');
+                }
+                button.textContent = letter;
+                button.href = '#';
+                
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    filterByLetter(letter);
+                });
+                
+                letterNav.appendChild(button);
+            });
+            
+            function filterByLetter(letter) {
+                document.querySelectorAll('.letter-btn').forEach(btn => {
+                    btn.classList.remove('active');
+                });
+                
+                const activeBtn = Array.from(letterNav.children).find(btn => btn.textContent === letter);
+                if (activeBtn) activeBtn.classList.add('active');
+                
+                programItems.forEach(program => {
+                    if (letter === 'All') {
+                        program.classList.remove('hidden');
+                    } else {
+                        const programLetter = program.getAttribute('data-letter');
+                        program.classList.toggle('hidden', programLetter !== letter);
+                    }
+                });
+                
+                const visiblePrograms = programItems.filter(p => !p.classList.contains('hidden'));
+                placeholder.style.display = visiblePrograms.length === 0 ? 'block' : 'none';
+            }
+        }
+    });
+</script>
+</body>
+</html>
