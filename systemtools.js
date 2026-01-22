@@ -15,7 +15,7 @@ const toolsData = {
         },
         {
             "name": "Bulk Crap Uninstaller",
-            "description": "Remove large amounts of applications with minimal to no user input",
+            "description": "Remove large amounts of applications with minimal to no user input.",
             "version": "5.9",
             "size": "7.8 MB",
             "platform": "Windows",
@@ -49,6 +49,19 @@ const toolsData = {
             "download_url": "uninstall_edge.bat",
             "download_text": "Download Edge Uninstaller",
             "details": "Batch file that runs a PowerShell script to completely remove Microsoft Edge from Windows. Run as Administrator for best results."
+        },
+      {
+            "name": "EarTrumpet",
+            "description": "Advanced volume control for Windows.",
+            "version": "1.0",
+            "size": "7,5 MB",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://apps.microsoft.com/store/detail/eartrumpet/9NBLGGH516XP?mode=full&cid=eartrumpet.landing",
+            "download_text": "Download the app from Microsoft Store",
+            "icon": "https://static0.makeuseofimages.com/wordpress/wp-content/uploads/2025/12/eartrumpet-app-logo.png?q=70&fit=contain&w=420&dpr=1",
+            "details": "EarTrumpet is a powerful volume control app for Windows that allows you to manage the volume of individual applications with ease. It integrates seamlessly with the Windows taskbar and provides a more intuitive way to control audio levels."
         }
     ]
 };
