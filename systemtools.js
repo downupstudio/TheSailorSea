@@ -75,6 +75,19 @@ const toolsData = {
             "download_text": "Download the app",
             "icon": "https://mloads.com/uploads/posts/2024-11/altsnap.webp",
             "details": "AltSnap is a lightweight Windows utility that enhances window management by allowing you to move and resize windows using the Alt key, similar to Linux/Unix desktop environments."
-        }
+        },
+       {
+            "name": "HWiNFO",
+            "description": "System information and hardware monitoring tool.",
+            "version": "8.40",
+            "size": "18 KB",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://www.hwinfo.com/files/hwi64_840.exe",
+            "download_text": "Download the app",
+            "icon": "HWiNFO_icon-removebg-preview.png",
+            "details": "HWiNFO is a system information and hardware monitoring tool that provides detailed information about your computer's hardware components."
+        },
     ]
 };
