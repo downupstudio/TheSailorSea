@@ -74,7 +74,7 @@ const toolsData = {
             "download_url": "https://github.com/RamonUnch/AltSnap/releases/download/1.67/AltSnap1.67-inst.exe",
             "download_text": "Download the app",
             "icon": "https://mloads.com/uploads/posts/2024-11/altsnap.webp",
-            "details": "AltSnap is a utility that enhances Windows dragging with additional features like snap-to-grid, window snapping, and more."
+            "details": "AltSnap is a lightweight Windows utility that enhances window management by allowing you to move and resize windows using the Alt key, similar to Linux/Unix desktop environments."
         }
     ]
 };
