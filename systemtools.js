@@ -54,7 +54,7 @@ const toolsData = {
             "name": "EarTrumpet",
             "description": "Advanced volume control for Windows.",
             "version": "1.0",
-            "size": "7,5 MB",
+            "size": "7.5 MB",
             "platform": "Windows",
             "status": "Downloadable",
             "status_color": "#b39dff",
