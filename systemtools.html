@@ -226,9 +226,19 @@
             <!-- Tools will be loaded dynamically from systemtools.json -->
         </div>
     </main>
-
+  
 <script src="systemtools.js"></script>    
 <script>
+    // Global function for downloads (like in MacroDash)
+    function downloadFile(url, filename) {
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         const programsContainer = document.querySelector('.programs-container');
         const letterNav = document.getElementById('letterNav');
@@ -270,6 +280,18 @@
                 </div>`;
             }
             
+            // Get filename from URL or use tool name
+            let filename = '';
+            if (tool.download_url.includes('/')) {
+                filename = tool.download_url.split('/').pop();
+            } else {
+                filename = tool.download_url;
+            }
+            
+            // Clean filename for JavaScript
+            const cleanUrl = tool.download_url.replace(/'/g, "\\'");
+            const cleanFilename = filename.replace(/'/g, "\\'");
+            
             programItem.innerHTML = `
                 <div class="program-header">
                     ${iconHTML}
@@ -303,7 +325,7 @@
                 <div class="download-section">
                     <h3 style="margin-bottom: 1rem;">Download Links</h3>
                     <div class="download-links">
-                        <a href="${tool.download_url}" class="download-btn" target="_blank">${tool.download_text || 'Download'}</a>
+                        <button class="download-btn" onclick="downloadFile('${cleanUrl}', '${cleanFilename}')">${tool.download_text || 'Download'}</button>
                     </div>
                 </div>
             `;
