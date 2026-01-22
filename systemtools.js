@@ -86,7 +86,7 @@ const toolsData = {
             "status_color": "#b39dff",
             "download_url": "https://www.hwinfo.com/files/hwi64_840.exe",
             "download_text": "Download the app",
-            "icon": "HWiNFO_icon-removebg-preview.png",
+            "icon": "https://www.hwinfo.com/wp-content/themes/hwinfo/img/logo-sm.png",
             "details": "HWiNFO is a system information and hardware monitoring tool that provides detailed information about your computer's hardware components."
         },
     ]
