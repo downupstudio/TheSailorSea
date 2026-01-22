@@ -62,6 +62,19 @@ const toolsData = {
             "download_text": "Download the app from Microsoft Store",
             "icon": "https://static0.makeuseofimages.com/wordpress/wp-content/uploads/2025/12/eartrumpet-app-logo.png?q=70&fit=contain&w=420&dpr=1",
             "details": "EarTrumpet is a powerful volume control app for Windows that allows you to manage the volume of individual applications with ease. It integrates seamlessly with the Windows taskbar and provides a more intuitive way to control audio levels."
+        },
+        {
+            "name": "AltSnap",
+            "description": "Enhance Windows dragging with additional features.",
+            "version": "1.67",
+            "size": "184 KB",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://github.com/RamonUnch/AltSnap/releases/download/1.67/AltSnap1.67-inst.exe",
+            "download_text": "Download the app",
+            "icon": "https://mloads.com/uploads/posts/2024-11/altsnap.webp",
+            "details": "AltSnap is a utility that enhances Windows dragging with additional features like snap-to-grid, window snapping, and more."
         }
     ]
 };
