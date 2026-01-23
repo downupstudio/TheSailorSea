@@ -114,5 +114,17 @@ const toolsData = {
             "icon": "https://massgrave.dev/img/logo.png",
             "details": "MAS (Microsoft Activation Script) is a powerful and user-friendly script designed to help users activate Windows and Microsoft Office products easily and efficiently."
         },
+        {
+            "name": "VCRedist",
+            "description": "AIO Repack for latest Microsoft Visual C++ Redistributable Runtimes, without the original setup bloat payload.",
+            "version": "0.103.0",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://github.com/abbodi1406/vcredist/releases/download/v0.103.0/VisualCppRedist_AIO_x86_x64.exe",
+            "download_text": "Download the repack",
+            "icon": "https://vcredist.com/img/vcredist.png",
+            "details": "VCRedist is an all-in-one repack for the latest Microsoft Visual C++ Redistributable Runtimes, designed to provide a streamlined installation experience without the bloat of original setup payloads."
+        },
     ]
 };
