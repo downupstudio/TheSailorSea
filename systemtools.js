@@ -153,7 +153,7 @@ const toolsData = {
             "icon": "https://cdn2.steamgriddb.com/icon/700a143a1799e92c5aca1d4bf9de0b2a/32/256x256.png",
             "details": "Rainmeter is a tool that allows you to customize your desktop with skins and widgets."
         },
-              {
+       {
             "name": "MechvibesDX",
             "description": "Mechanical keyboard sound simulator with DX support.",
             "version": "0.3.0",
@@ -165,6 +165,18 @@ const toolsData = {
             "download_text": "Download the app",
             "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgN1GhEDBPSf1bhCH-Nxq5IPcjaOgB0JWAdg&s",
             "details": "MechvibesDX is a mechanical keyboard sound simulator with DirectX support."
+        },
+       {
+            "name": "Recycle Bin Themes",
+            "description": "Customize your Recycle Bin with themes.",
+            "version": "1.0.0",
+            "size": "3 KB",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://github.com/sdushantha/recycle-bin-themes/blob/main/RecycleBinThemes.ps1",
+            "download_text": "Download the PowerShell script",
+            "details": "Recycle Bin Themes allows you to customize your Recycle Bin with various themes."
         },
     ]
 };
