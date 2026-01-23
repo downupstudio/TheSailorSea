@@ -229,7 +229,6 @@
   
 <script src="systemtools.js"></script>    
 <script>
-    // Global function for downloads (like in MacroDash)
     function downloadFile(url, filename) {
         const link = document.createElement('a');
         link.href = url;
@@ -280,7 +279,6 @@
                 </div>`;
             }
             
-            // Get filename from URL or use tool name
             let filename = '';
             if (tool.download_url.includes('/')) {
                 filename = tool.download_url.split('/').pop();
@@ -288,7 +286,6 @@
                 filename = tool.download_url;
             }
             
-            // Clean filename for JavaScript
             const cleanUrl = tool.download_url.replace(/'/g, "\\'");
             const cleanFilename = filename.replace(/'/g, "\\'");
             
