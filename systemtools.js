@@ -118,6 +118,7 @@ const toolsData = {
             "name": "VCRedist",
             "description": "AIO Repack for latest Microsoft Visual C++ Redistributable Runtimes, without the original setup bloat payload.",
             "version": "0.103.0",
+            "size": "30.1 MB",
             "platform": "Windows",
             "status": "Downloadable",
             "status_color": "#b39dff",
@@ -125,6 +126,45 @@ const toolsData = {
             "download_text": "Download the repack",
             "icon": "https://vcredist.com/img/vcredist.png",
             "details": "VCRedist is an all-in-one repack for the latest Microsoft Visual C++ Redistributable Runtimes, designed to provide a streamlined installation experience without the bloat of original setup payloads."
+        },
+        {
+            "name": "WhyNotWin11",
+            "description": "Check your PC's compatibility for Windows 11.",
+            "version": "2.7.0.0",
+            "size": "2.22 MB",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://github.com/rcmaehl/WhyNotWin11/releases/download/2.7.0/WhyNotWin11.exe",
+            "download_text": "Download the app",
+            "icon": "https://cdn2.portableapps.com/WhyNotWin11Portable_128.png",
+            "details": "WhyNotWin11 is a tool that checks your PC's compatibility for Windows 11."
+        },
+      {
+            "name": "Rainmeter",
+            "description": "Customize your desktop with skins and widgets.",
+            "version": "4.5.23",
+            "size": "2.5 MB",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://github.com/rainmeter/rainmeter/releases/download/v4.5.23.3836/Rainmeter-4.5.23.exe",
+            "download_text": "Download the app",
+            "icon": "https://cdn2.steamgriddb.com/icon/700a143a1799e92c5aca1d4bf9de0b2a/32/256x256.png",
+            "details": "Rainmeter is a tool that allows you to customize your desktop with skins and widgets."
+        },
+              {
+            "name": "MechvibesDX",
+            "description": "Mechanical keyboard sound simulator with DX support.",
+            "version": "0.3.0",
+            "size": "62.7 MB",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://github.com/hainguyents13/mechvibes-dx/releases/download/v0.3.0/MechvibesDx_0.3.0_x64-setup.exe",
+            "download_text": "Download the app",
+            "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgN1GhEDBPSf1bhCH-Nxq5IPcjaOgB0JWAdg&s",
+            "details": "MechvibesDX is a mechanical keyboard sound simulator with DirectX support."
         },
     ]
 };
