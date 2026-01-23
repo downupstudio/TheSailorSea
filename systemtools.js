@@ -102,5 +102,17 @@ const toolsData = {
             "icon": "https://store-images.s-microsoft.com/image/apps.34982.14453285281266867.f7b19530-4829-4646-9985-b7e1e716c416.2a3d0398-0d33-46a3-b739-47b31af65e59?h=210",
             "details": "Monitorian is a Windows desktop tool to adjust the brightness of multiple monitors with ease."
         },
+      {
+            "name": "MAS",
+            "description": "Windows and Office Activation Script.",
+            "version": "3.9",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://massgrave.dev",
+            "download_text": "Visit MAS",
+            "icon": "https://massgrave.dev/img/logo.png",
+            "details": "MAS (Microsoft Activation Script) is a powerful and user-friendly script designed to help users activate Windows and Microsoft Office products easily and efficiently."
+        },
     ]
 };
