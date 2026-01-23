@@ -107,7 +107,7 @@ const toolsData = {
             "description": "Windows and Office Activation Script.",
             "version": "3.9",
             "platform": "Windows",
-            "status": "Downloadable",
+            "status": "Script Available",
             "status_color": "#b39dff",
             "download_url": "https://massgrave.dev",
             "download_text": "Visit MAS",
