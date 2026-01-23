@@ -174,8 +174,8 @@ const toolsData = {
             "platform": "Windows",
             "status": "Downloadable",
             "status_color": "#b39dff",
-            "download_url": "https://github.com/sdushantha/recycle-bin-themes/blob/main/RecycleBinThemes.ps1",
-            "download_text": "Download the PowerShell script",
+            "download_url": "https://raw.githubusercontent.com/sdushantha/recycle-bin-themes/refs/heads/main/RecycleBinThemes.ps1",
+            "download_text": "See and copy the PowerShell script",
             "details": "Recycle Bin Themes allows you to customize your Recycle Bin with various themes."
         },
     ]
