@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System Tools | TheSailorSea</title>
+    <title>File Tools | TheSailorSea</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
@@ -214,7 +214,7 @@
                 <i class="fas fa-arrow-left"></i> Back to Tools
             </a>
             <h1 class="page-title">
-                <i class="fas fa-cogs"></i> System Tools
+                <i class="fas fa-file-alt"></i> File Tools
             </h1>
         </div>
     </header>
@@ -225,8 +225,8 @@
         <div class="programs-container">
         </div>
     </main>
-  
-<script src="systemtools.js"></script>    
+
+<script src="filetools.js"></script>    
 <script>
     function downloadFile(url, filename) {
         const link = document.createElement('a');
@@ -245,13 +245,13 @@
             programsContainer.innerHTML = `
                 <div class="placeholder">
                     <i class="fas fa-exclamation-triangle"></i>
-                    <p>Error: systemtools.js not loaded</p>
+                    <p>Error: filetools.js not loaded</p>
                 </div>
             `;
             return;
         }
         
-        const programs = toolsData.system_tools;
+        const programs = toolsData.file_tools;
         programsContainer.innerHTML = '';
         
         programs.sort((a, b) => {
@@ -338,7 +338,7 @@
             placeholder.className = 'placeholder';
             placeholder.innerHTML = `
                 <i class="fas fa-plus-circle"></i>
-                <p>More system tools will be added soon</p>
+                <p>More file tools will be added soon</p>
             `;
             programsContainer.appendChild(placeholder);
             

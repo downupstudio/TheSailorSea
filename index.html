@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TheSailorsSea | Tools</title>
+    <title>TheSailorSea</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -159,6 +159,52 @@
             color: var(--accent-color);
         }
 
+        .subcategory-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .subcategory-item {
+            background: rgba(26, 16, 61, 0.5);
+            border: 1px solid rgba(157, 124, 255, 0.1);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .subcategory-item:hover {
+            background: rgba(157, 124, 255, 0.1);
+            border-color: rgba(157, 124, 255, 0.3);
+            transform: translateY(-3px);
+        }
+
+        .item-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 1rem;
+        }
+
+        .item-header i {
+            color: var(--accent-color);
+            font-size: 1.5rem;
+        }
+
+        .item-header h4 {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #e6e1ff;
+        }
+
+        .item-desc {
+            color: #c5b5ff;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
         .resource-link {
             display: inline-block;
             color: var(--accent-color);
@@ -205,6 +251,10 @@
             .section {
                 padding: 1.5rem;
             }
+            
+            .subcategory-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -214,7 +264,7 @@
             <div class="logo">
                 <a href="index.html">
                     <i class="fas fa-anchor logo-icon"></i>
-                    <h1>TheSailorsSea</h1>
+                    <h1>TheSailorSea</h1>
                 </a>
             </div>
             <p class="tagline">Navigation for the digital seas</p>
@@ -240,7 +290,15 @@
                 <!-- System Tools Subcategory -->
                 <div class="subcategory">
                     <h3 class="subcategory-title"><i class="fas fa-cogs"></i> System Tools</h3>
+                    <p style="color: #c5b5ff; margin-bottom: 1rem;">Tools for system management, optimization, and maintenance.</p>
                     <a href="systemtools.html" class="resource-link">View System Tools →</a>
+                </div>
+
+                <!-- File Tools Subcategory -->
+                <div class="subcategory">
+                    <h3 class="subcategory-title"><i class="fas fa-file-alt"></i> File Tools</h3>
+                    <p style="color: #c5b5ff; margin-bottom: 1rem;">Utilities for file management, conversion, and manipulation.</p>
+                    <a href="filetools.html" class="resource-link">View File Tools →</a>
                 </div>
             </section>
         </div>
@@ -249,11 +307,11 @@
     <footer>
         <div class="container">
             <p class="disclaimer">
-                TheSailorsSea is a digital content resource platform. We only provide links to external resources. No files are hosted on this site.
+                TheSailorSea is a digital content resource platform. We only provide links to external resources. No files are hosted on this site.
             </p>
           
             <p class="copyright">
-                &copy; 2026 TheSailorsSea
+                &copy; 2026 TheSailorSea
             </p>
         </div>
     </footer>
