@@ -178,5 +178,17 @@ const toolsData = {
             "download_text": "See and copy the PowerShell script",
             "details": "Recycle Bin Themes allows you to customize your Recycle Bin with various themes."
         },
+        {
+            "name": "ExcelDarkThemeFix",
+            "description": "Fixes dark theme issues in Excel.",
+            "version": "1.0.0",
+            "size": "70 KB",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://github.com/matafokka/ExcelDarkThemeFix",
+            "download_text": "See and download the add-on from GitHub",
+            "details": "ExcelDarkThemeFix fixes dark theme issues in Excel.<br>When the custom dark Windows theme is used, sheets, graphics items, charts and everything that have an \"Automatic color\" are displayed, exported and printed in the wrong colors.<br>How to install:<br>1. Download ExcelDarkThemeFix.xlam file and ExcelDarkThemeFixBG folder.<br>2. Navigate to \"%AppData%\\Microsoft\\Excel\\XLSTART\" and put both ExcelDarkThemeFix.xlam and ExcelDarkThemeFixBG here. Do NOT move anything from ExcelDarkThemeFixBG and don't rename it!<br> 3. Open Excel and enjoy."
+        },
     ]
 };
