@@ -237,6 +237,19 @@
         document.body.removeChild(link);
     }
 
+    function openAndCloseDownload(url) {
+        const newTab = window.open(url, '_blank');
+        if (newTab) {
+            setTimeout(() => {
+                try {
+                    newTab.close();
+                } catch (e) {
+                    console.log('Could not close tab:', e);
+                }
+            }, 1000);
+        }
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
         const programsContainer = document.querySelector('.programs-container');
         const letterNav = document.getElementById('letterNav');
@@ -288,6 +301,13 @@
             const cleanUrl = tool.download_url.replace(/'/g, "\\'");
             const cleanFilename = filename.replace(/'/g, "\\'");
             
+            let downloadButton = '';
+            if (tool.openAndClose) {
+                downloadButton = `<button class="download-btn" onclick="openAndCloseDownload('${cleanUrl}')">${tool.download_text || 'Download'}</button>`;
+            } else {
+                downloadButton = `<button class="download-btn" onclick="downloadFile('${cleanUrl}', '${cleanFilename}')">${tool.download_text || 'Download'}</button>`;
+            }
+            
             programItem.innerHTML = `
                 <div class="program-header">
                     ${iconHTML}
@@ -321,7 +341,7 @@
                 <div class="download-section">
                     <h3 style="margin-bottom: 1rem;">Download Links</h3>
                     <div class="download-links">
-                        <button class="download-btn" onclick="downloadFile('${cleanUrl}', '${cleanFilename}')">${tool.download_text || 'Download'}</button>
+                        ${downloadButton}
                     </div>
                 </div>
             `;

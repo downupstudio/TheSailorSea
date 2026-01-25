@@ -4,7 +4,7 @@ const toolsData = {
             "name": "Free Download Manager",
             "description": "A powerful download manager for Windows.",
             "version": "6.33",
-            "size": "46,4 MB",
+            "size": "46.4 MB",
             "platform": "Windows",
             "status": "Downloadable",
             "status_color": "#b39dff",
@@ -38,6 +38,46 @@ const toolsData = {
             "download_text": "Download the app",
             "icon": "https://file-converter.io/images/application-icon.png",
             "details": "File Converter is a utility that allows you to convert files directly from the context menu. It supports a wide range of formats and can be used to convert audio, video, images, and documents."
+        },
+       {
+            "name": "Total Commander",
+            "description": "A file manager for Windows similar to Windows Explorer.",
+            "version": "11.56",
+            "size": "10.7 MB",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://totalcommander.ch/1156/newcert/tcmd1156x32_64.exe",
+            "download_text": "Download the app",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/3/39/Total_Commander_Logo.png",
+            "details": "Total Commander is a file manager for Windows similar to Windows Explorer. It allows you to manage files and folders, compare directories, and perform various file operations."
+        },
+        {
+            "name": "Everything",
+            "description": "A fast file search tool for Windows.",
+            "version": "1.4.1.1032",
+            "size": "1.81 MB",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://www.voidtools.com/Everything-1.4.1.1032.x86-Setup.exe",
+            "download_text": "Download the app",
+            "icon": "https://upload.wikimedia.org/wikipedia/commons/6/68/Everything_%28software%29_icon.png",
+            "details": "Everything is a fast file search tool for Windows. It allows you to quickly find files and folders on your computer."
+        },
+      {
+            "name": "TestDisk",
+            "description": "A powerful data recovery tool.",
+            "version": "7.2",
+            "size": "26.3 MB",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://www.cgsecurity.org/testdisk-7.2.win.zip",
+            "download_text": "Download the app",
+            "icon": "https://www.cgsecurity.org/mw/images/Testdisk_64x64.png",
+            "details": "TestDisk is a powerful data recovery tool. It can recover lost partitions and make non-booting disks bootable again.",
+            "openAndClose": true
         },
     ]
 };
