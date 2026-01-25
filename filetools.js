@@ -79,5 +79,18 @@ const toolsData = {
             "details": "TestDisk is a powerful data recovery tool. It can recover lost partitions and make non-booting disks bootable again.",
             "openAndClose": true
         },
+      {
+            "name": "LocalSend",
+            "description": "A simple, secure file transfer tool over local networks.",
+            "version": "1.17.0",
+            "size": "14.2 MB",
+            "platform": "Windows",
+            "status": "Downloadable",
+            "status_color": "#b39dff",
+            "download_url": "https://github.com/localsend/localsend/releases/download/v1.17.0/LocalSend-1.17.0-windows-x86-64.exe",
+            "download_text": "Download the app",
+            "icon": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-wKN_iTUanbXRViOfOFm0FItaKAScRFUxTQ&s",
+            "details": "LocalSend is a simple, secure file transfer tool over local networks. It allows you to easily share files between devices without the need for an internet connection."
+        },
     ]
 };
