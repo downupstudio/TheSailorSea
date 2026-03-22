@@ -12,7 +12,7 @@
             --section-bg: rgba(26, 16, 61, 0.3);
             --border-color: rgba(157, 124, 255, 0.2);
             --warning-red: #ff6b6b;
-            --warning-bg: rgba(255, 107, 107, 0.1);
+            --success-green: #6bff9e;
         }
 
         body {
@@ -87,36 +87,37 @@
             transition: color 0.3s;
         }
 
-        .nav-links a:hover {
+        .nav-links a:hover,
+        .nav-links a.active {
             color: var(--accent-color);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: var(--accent-color);
         }
 
         .main-content {
             padding: 3rem 0;
         }
 
-        .warning-banner {
-            background: linear-gradient(135deg, #2a1a3a, #1a103d);
-            border-left: 4px solid var(--warning-red);
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            border-radius: 8px;
-            display: flex;
+        .back-link {
+            display: inline-flex;
             align-items: center;
-            gap: 1rem;
-            flex-wrap: wrap;
+            gap: 0.5rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            transition: gap 0.3s;
         }
 
-        .warning-banner i {
-            font-size: 2rem;
-            color: var(--warning-red);
-        }
-
-        .warning-banner .countdown {
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: var(--warning-red);
-            margin-left: auto;
+        .back-link:hover {
+            gap: 0.8rem;
         }
 
         .section {
@@ -152,39 +153,36 @@
 
         .info-box {
             background: rgba(157, 124, 255, 0.05);
-            border: 1px solid var(--border-color);
+            border-left: 3px solid var(--accent-color);
             border-radius: 8px;
-            padding: 1.5rem;
+            padding: 1.2rem;
             margin: 1rem 0;
         }
 
-        .info-box ul {
-            list-style: none;
-            padding-left: 0;
+        .warning-box {
+            background: rgba(255, 107, 107, 0.1);
+            border-left: 3px solid var(--warning-red);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin: 1rem 0;
         }
 
-        .info-box li {
-            padding: 0.5rem 0;
-            padding-left: 1.5rem;
-            position: relative;
+        .success-box {
+            background: rgba(107, 255, 158, 0.1);
+            border-left: 3px solid var(--success-green);
+            border-radius: 8px;
+            padding: 1.2rem;
+            margin: 1rem 0;
         }
 
-        .info-box li:before {
-            content: "•";
-            color: var(--accent-color);
-            font-weight: bold;
-            position: absolute;
-            left: 0;
-        }
-
-        .action-grid {
+        .resource-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin: 1.5rem 0;
         }
 
-        .action-card {
+        .resource-card {
             background: rgba(26, 16, 61, 0.5);
             border: 1px solid var(--border-color);
             border-radius: 8px;
@@ -192,23 +190,23 @@
             transition: all 0.3s ease;
         }
 
-        .action-card:hover {
+        .resource-card:hover {
             background: rgba(157, 124, 255, 0.1);
             transform: translateY(-3px);
         }
 
-        .action-card i {
+        .resource-card i {
             font-size: 2rem;
             color: var(--accent-color);
             margin-bottom: 1rem;
         }
 
-        .action-card h3 {
+        .resource-card h3 {
             font-size: 1.2rem;
             margin-bottom: 0.75rem;
         }
 
-        .action-card p {
+        .resource-card p {
             color: #c5b5ff;
             font-size: 0.9rem;
             margin-bottom: 1rem;
@@ -231,25 +229,32 @@
             border-color: var(--accent-color);
         }
 
-        .resource-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1rem;
+        .resource-list {
+            list-style: none;
+            padding-left: 0;
         }
 
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
+        .resource-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .resource-list li:before {
+            content: "→";
             color: var(--accent-color);
-            text-decoration: none;
-            margin-bottom: 1.5rem;
-            transition: gap 0.3s;
+            position: absolute;
+            left: 0;
         }
 
-        .back-link:hover {
-            gap: 0.8rem;
+        .resource-list a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .resource-list a:hover {
+            color: var(--accent-color);
         }
 
         footer {
@@ -258,6 +263,12 @@
             text-align: center;
             border-top: 1px solid rgba(255, 255, 255, 0.05);
             margin-top: 2rem;
+        }
+
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: opacity 0.3s;
         }
 
         footer a:hover {
@@ -278,6 +289,20 @@
             font-size: 0.8rem;
         }
 
+        @media (max-width: 768px) {
+            .nav-links {
+                gap: 1rem;
+                justify-content: center;
+            }
+            
+            .section {
+                padding: 1.5rem;
+            }
+            
+            .resource-grid {
+                grid-template-columns: 1fr;
+            }
+        }
         .footer-links {
             display: flex;
             justify-content: center;
@@ -309,24 +334,4 @@
 
         .footer-link i {
             font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links {
-                gap: 1rem;
-                justify-content: center;
-            }
-
-            .section {
-                padding: 1.5rem;
-            }
-
-            .warning-banner {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .warning-banner .countdown {
-                margin-left: 0;
-            }
         }

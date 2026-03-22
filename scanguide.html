@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TheSailorSea - The Scan Guide</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/scanguide.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html">
+                    <i class="fas fa-anchor logo-icon"></i>
+                    <h1>TheSailorSea</h1>
+                </a>
+            </div>
+            <p class="tagline">Navigation for the digital seas</p>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="index.html#tools">Tools</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <a href="index.html" class="back-link">
+                <i class="fas fa-arrow-left"></i> Back to the main page
+            </a>
+
+            <div class="section">
+                <h1 class="section-title">
+                    <i class="fas fa-shield-virus"></i> The VirusTotal Scan Guide
+                </h1>
+                
+                <div class="disclaimer-box">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p>This guide is here to help you make informed decisions, but the final call on file safety is yours. Use your best judgment and be cautious. If you're unsure, consider seeking professional help from a security expert.</p>
+                </div>
+
+                <div class="toc">
+                    <h2><i class="fas fa-list-ul"></i> Table of Contents</h2>
+                    <div class="toc-grid">
+                        <a href="#scan-date">Check the Scan Date</a>
+                        <a href="#details-tab">Check the Details Tab</a>
+                        <a href="#submitted-names">Check the Submitted Names</a>
+                        <a href="#pirated-software">If It's a Pirated Software</a>
+                        <a href="#relations-tab">Check the Relations Tab</a>
+                        <a href="#contacted-ips">Check Contacted IPs/URLs</a>
+                        <a href="#behavior-tab">Check the Behavior Tab</a>
+                        <a href="#detections-tab">Check the Detections Tab</a>
+                        <a href="#highlighted-actions">Check Highlighted Actions</a>
+                        <a href="#file-age">Check the File Age</a>
+                        <a href="#similar-detections">Check Multiple Similar Detections</a>
+                        <a href="#community-tab">Consider the Community Tab</a>
+                        <a href="#conclusion">Conclusion</a>
+                    </div>
+                </div>
+
+                <div id="scan-date" class="guide-section">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-calendar-alt"></i> Check the Scan Date
+                    </h2>
+                    <p>Ensure that the scan date is recent. If not, click on the <strong>'Reanalyze'</strong> button and scan to detect new threats or remove old false positives.</p>
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>How to find:</strong> Go to VirusTotal → Upload your file or search the file hash/url → Look at the top-right side of the screen.</p>
+                    </div>
+                </div>
+
+                <div id="details-tab" class="guide-section">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-info-circle"></i> Check the Details Tab
+                    </h2>
+                    <p><strong>Creation Time, First Seen In The Wild, and First Submission:</strong></p>
+                    <ul class="guide-list">
+                        <li>Creation Time may be unreliable if obviously fake (e.g., set in the future).</li>
+                        <li>Compare First Seen In The Wild and First Submission dates with the product release date to identify recycled malware.</li>
+                    </ul>
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>How to find:</strong> Go to VirusTotal → Upload your file or search the file hash/url → Click on the <strong>'Details'</strong> tab.</p>
+                    </div>
+                </div>
+
+                <div id="submitted-names" class="guide-section">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-tag"></i> Check the Submitted Names
+                    </h2>
+                    <ul class="guide-list">
+                        <li>Ignore names resembling hashes or generic terms like 'sample1.exe'.</li>
+                        <li>Multiple names for unrelated products suggest potential malware.</li>
+                    </ul>
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>How to find:</strong> Go to VirusTotal → Upload your file or search the file hash/url → Click on the <strong>'Details'</strong> tab → Scroll down until you see the <strong>'Names'</strong> section.</p>
+                    </div>
+                </div>
+
+                <div id="pirated-software" class="guide-section">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-skull"></i> If It's a Pirated Software
+                    </h2>
+                    <p>For pirated software, signatures won't be helpful as cracks or patched files won't be valid, but typically if there was an invalid signature it would be suspicious.</p>
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>How to find:</strong> Go to VirusTotal → Upload your file or search the file hash/url → Click on the <strong>'Details'</strong> tab → Scroll down until you see the <strong>'Signature info'</strong> section.</p>
+                    </div>
+                </div>
+
+                <div id="relations-tab" class="guide-section">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-project-diagram"></i> Check the Relations Tab
+                    </h2>
+                    
+                    <h3>Execution Parents / Resource Parents</h3>
+                    <p>Focus on installers or archives that contained, dropped, or downloaded the file. Ignore if scanning an installer that wasn't extracted from another file.</p>
+                    
+                    <h3>Dropped Files / Bundled Files</h3>
+                    <p>Examine files extracted from the scanned file, particularly useful when scanning archive files.</p>
+                    
+                    <h3>Graph Summary</h3>
+                    <p>Take a quick glance at everything once more.</p>
+                    
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>How to find:</strong> Go to VirusTotal → Upload your file or search the file hash/url → Click on the <strong>'Relations'</strong> tab → Explore the various sections.</p>
+                    </div>
+                </div>
+
+                <div id="contacted-ips" class="guide-section">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-network-wired"></i> Check the Contacted IP Addresses/URLs
+                    </h2>
+                    <ul class="guide-list">
+                        <li>Beware of overwhelming malicious results, but also consider false positives (e.g., drive.google.com is currently flagged as a phishing site by one of the AVs).</li>
+                        <li>Suspicion arises if a file meant to be benign (e.g., a keygen or patcher) makes unexpected requests.</li>
+                    </ul>
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>How to find:</strong> Go to VirusTotal → Upload your file or search the file hash/url → Click on the <strong>'Relations'</strong> tab → Scroll down until you see the <strong>'Contacted IP addresses'</strong> section.</p>
+                    </div>
+                </div>
+
+                <div id="behavior-tab" class="guide-section">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-chart-line"></i> Check the Behavior Tab
+                    </h2>
+                    <ul class="guide-list">
+                        <li>Opening and reading files, writing/deleting temp files, and expected installer activities are generally benign.</li>
+                        <li>Suspicion arises if the file exhibits unusual behavior or accesses unnecessary areas.</li>
+                    </ul>
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>How to find:</strong> Go to VirusTotal → Upload your file or search the file hash/url → Click on the <strong>'Behavior'</strong> tab → Scroll down and notice the info presented to you.</p>
+                    </div>
+                </div>
+
+                <div id="detections-tab" class="guide-section">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-bug"></i> Check the Detections Tab
+                    </h2>
+                    <ul class="guide-list">
+                        <li>Generic/gen/susgen detections (like W32.Trojan.Gen) or AI/ML labels may indicate potential malware that doesn't match known signatures.</li>
+                        <li>Common detections for cracks, patches, etc., include riskware, hacktool, and not-a-virus (last one is specific to Kaspersky).</li>
+                    </ul>
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>How to find:</strong> Go to VirusTotal → Upload your file or search the file hash/url → Click on the <strong>'Detection'</strong> tab → Scroll down and notice the info presented to you.</p>
+                    </div>
+                </div>
+
+                <div id="highlighted-actions" class="guide-section">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-exclamation-triangle"></i> Check the Highlighted Actions
+                    </h2>
+                    <p>Although rare, alarming statements like <strong>'all your files are belong to us'</strong> require immediate action.</p>
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>How to find:</strong> Go to VirusTotal → Upload your file or search the file hash/url → Click on the <strong>'Behavior'</strong> tab → Scroll down until you see the <strong>'Highlighted actions'</strong> section.</p>
+                    </div>
+                </div>
+
+                <div id="file-age" class="guide-section">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-clock"></i> Check the File Age
+                    </h2>
+                    <ul class="guide-list">
+                        <li>New files may lack accurate detections, while older files should have more reliable results.</li>
+                        <li>A file's age can provide context; newer files warrant closer scrutiny.</li>
+                    </ul>
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>How to find:</strong> Go to VirusTotal → Upload your file or search the file hash/url → Click on the <strong>'Details'</strong> tab → Scroll down until you see the <strong>'History'</strong> section.</p>
+                    </div>
+                </div>
+
+                <div id="similar-detections" class="guide-section">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-chart-bar"></i> Check If It Has Multiple Similar Detections
+                    </h2>
+                    <p>If numerous specific detections align, it indicates higher risk.</p>
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>How to find:</strong> Go to VirusTotal → Upload your file or search the file hash/url → Look at the <strong>'Popular threat label'</strong>, <strong>'Threat categories'</strong>, and <strong>'Family labels'</strong> sections.</p>
+                    </div>
+                </div>
+
+                <div id="community-tab" class="guide-section">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-users"></i> Consider the Community Tab
+                    </h2>
+                    <p>While often cluttered, occasionally valuable insights or warnings are found in community comments and voting.</p>
+                    <div class="info-box">
+                        <i class="fas fa-info-circle"></i>
+                        <p><strong>How to find:</strong> Go to VirusTotal → Upload your file or search the file hash/url → Click on the <strong>'Community'</strong> tab.</p>
+                    </div>
+                </div>
+
+                <div id="conclusion" class="guide-section conclusion-box">
+                    <h2 class="section-subtitle">
+                        <i class="fas fa-flag-checkered"></i> Conclusion
+                    </h2>
+                    <p>Even with thorough analysis, some uncertainty may remain. Exercise caution with suspicious files and generic detections.</p>
+                    <p><strong>If unsure, refrain from using the file.</strong></p>
+                    <p>The guide is adapted from the original VirusTotal scan guide by Clara which can be found <a href="https://claraiscute.neocities.org/Guides/vtguide/" target="_blank" rel="noopener noreferrer">here</a>.</p>
+                </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p class="disclaimer">
+                TheSailorSea is a digital content resource platform. We only provide links to external resources. No files are hosted on this site.
+            </p>
+            
+            <div class="footer-links">
+                <a href="beforepirate.html" class="footer-link">
+                    <i class="fas fa-skull-crossbones"></i> Before becoming a pirate...
+                </a>
+                <a href="scanguide.html" class="footer-link">
+                    <i class="fas fa-shield-virus"></i> The Scan Guide
+                </a>
+            </div>
+          
+            <p class="copyright">
+                &copy; 2026 TheSailorSea
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
